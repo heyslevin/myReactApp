@@ -1,12 +1,8 @@
 import React, { Component } from "react";
 
 class Overview extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	listItems(items) {
-		const propList = items.map((item) => <li>{item}</li>);
+		const propList = items.map((item) => <li key={item}>{item}</li>);
 
 		return <ul>{propList}</ul>;
 	}
