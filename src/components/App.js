@@ -16,9 +16,9 @@ class App extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
     this.setState((prevState) => ({
       myArray: [...prevState.myArray, this.state.myInput],
+      myInput: "",
     }));
   }
 
@@ -38,6 +38,7 @@ class App extends Component {
               type="text"
               id="inputText"
               name="inputText"
+              value={this.state.myInput}
               onChange={this.handleInput}
             />
           </label>

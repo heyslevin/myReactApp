@@ -1,15 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
+import uniqid from "uniqid";
 
-class Overview extends Component {
-	listItems(items) {
-		const propList = items.map((item) => <li key={item}>{item}</li>);
+const Overview = (props) => {
+	const { items } = props;
 
-		return <ul>{propList}</ul>;
-	}
-
-	render() {
-		return <div>{this.listItems(this.props.items)}</div>;
-	}
-}
+	return (
+		<ul>
+			{items.map((item) => (
+				<li key={uniqid()}>{item}</li>
+			))}
+		</ul>
+	);
+};
 
 export default Overview;
